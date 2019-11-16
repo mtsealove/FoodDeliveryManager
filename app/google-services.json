@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "21332290474",
+    "firebase_url": "https://deliverymanager-93791.firebaseio.com",
+    "project_id": "deliverymanager-93791",
+    "storage_bucket": "deliverymanager-93791.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:21332290474:android:ba13f2dbaa971e9f9019d3",
+        "android_client_info": {
+          "package_name": "com.mtsealove.github.food_delivery_manager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "21332290474-1823tv5vftijj6o2oulimp3fbnkalrds.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHG5OD4qjDLueBy1o99BkNm60-UFQ9xYE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "21332290474-1823tv5vftijj6o2oulimp3fbnkalrds.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

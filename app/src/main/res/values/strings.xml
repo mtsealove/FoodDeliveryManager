@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">주문배달 서비스(관리자)</string>
+    <string name="app_name">주문배달 서비스\n(관리자)</string>
+    <string name="default_notification_channel_name">channel_name</string>
+    <string name="default_notification_channel_id">80</string>
 </resources>

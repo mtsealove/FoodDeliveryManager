@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:background="@color/white"
+              android:layout_width="300dp"
+              android:layout_height="match_parent"
+              android:gravity="center_horizontal"
+              android:orientation="vertical">
+
+    <ImageView android:layout_width="80dp" android:layout_height="80dp"
+               android:layout_marginTop="40dp"
+               android:src="@drawable/logo" />
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:gravity="center"
+              android:layout_marginTop="15dp"
+              android:textColor="@color/black"
+              android:textSize="30sp"
+              android:text="@string/app_name"
+              android:textStyle="bold" />
+
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:background="@drawable/back_line"
+                    android:padding="10dp"
+                    android:layout_margin="15dp" >
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:textSize="18sp"
+                  android:textColor="@color/blue"
+                  android:textStyle="bold"
+                  android:id="@+id/nameTv"
+                  android:text="사용자명" />
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:layout_below="@id/nameTv"
+                  android:textSize="18sp"
+                  android:textColor="@color/black"
+                  android:textStyle="bold"
+                  android:id="@+id/bnameTv"
+                  android:text="업체명" />
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:layout_below="@id/bnameTv"
+                  android:textSize="18sp"
+                  android:textColor="@color/red"
+                  android:id="@+id/logoutTv"
+                  android:layout_alignParentRight="true"
+                  android:text="로그아웃" />
+    </RelativeLayout>
+
+    <ListView android:layout_width="match_parent" android:layout_height="wrap_content"
+              android:id="@+id/menuLv"
+              android:layout_marginHorizontal="15dp"/>
+
+</LinearLayout>

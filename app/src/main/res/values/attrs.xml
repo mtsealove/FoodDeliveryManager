@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    <declare-styleable name="TitleView"></declare-styleable>
+    <declare-styleable name="ItemView"></declare-styleable>
+    <declare-styleable name="SlideView"></declare-styleable>
+    <declare-styleable name="OrderView"></declare-styleable>
+</resources>

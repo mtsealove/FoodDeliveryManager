@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_marginTop="10dp"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView android:layout_width="match_parent" android:layout_height="wrap_content">
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:padding="10dp"
+        >
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:id="@+id/timeTv"
+                      android:textSize="16sp"
+                      android:text="주문시간"
+                      android:textColor="@color/red"
+                      />
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:layout_below="@id/timeTv"
+                      android:text="상품1\n상품2"
+                      android:textSize="16sp"
+                      android:id="@+id/namesTv"
+                      android:textColor="@color/black"
+            />
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:layout_below="@id/timeTv"
+                      android:layout_marginLeft="10dp"
+                      android:layout_toRightOf="@id/namesTv"
+                      android:text="800원\n9000원"
+                      android:textSize="16sp"
+                      android:id="@+id/pricesTv"
+                      android:textColor="@color/blue"
+            />
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="배송지 서울시 광진구 아차산"
+                      android:layout_below="@id/namesTv"
+                      android:textSize="16sp"
+                      android:id="@+id/addressTv"
+                      android:textColor="@color/black"
+            />
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="총 8000원"
+                      android:layout_below="@id/addressTv"
+                      android:textSize="16sp"
+                      android:id="@+id/totalPriceTv"
+                      android:textColor="@color/red"
+            />
+
+            <Button android:layout_width="match_parent" android:layout_height="37dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@id/totalPriceTv"
+                    android:id="@+id/statusBtn"
+                    android:text="배송 상태"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:background="@drawable/btn_green" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

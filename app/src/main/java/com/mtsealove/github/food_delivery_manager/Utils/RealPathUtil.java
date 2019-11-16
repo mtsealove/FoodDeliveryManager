@@ -1,4 +1,4 @@
-package com.mtsealove.github.food_delivery_manager;
+package com.mtsealove.github.food_delivery_manager.Utils;
 
 import android.annotation.SuppressLint;
 import android.content.ContentUris;

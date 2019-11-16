@@ -2,6 +2,7 @@ package com.mtsealove.github.food_delivery_manager;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
@@ -15,6 +16,7 @@ import android.webkit.WebView;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import com.mtsealove.github.food_delivery_manager.Utils.RealPathUtil;
 
 import java.io.File;
 import java.io.IOException;
@@ -32,6 +34,10 @@ public class SignUpActivity extends AppCompatActivity {
 
         SetWeb();
     }
+    private String GetIP() {
+        SharedPreferences pref = getSharedPreferences("pref", MODE_PRIVATE);
+        return "http://"+pref.getString("ip", "");
+    }
 
     private static final String TYPE_IMAGE = "image/*";
     private static final int INPUT_FILE_REQUEST_CODE = 1;
@@ -47,7 +53,9 @@ public class SignUpActivity extends AppCompatActivity {
         webSettings.setSupportZoom(true);
         webSettings.setJavaScriptEnabled(true);
         webSettings.setDomStorageEnabled(true);
-
+        webSettings.setLoadWithOverviewMode(true);
+        webSettings.setBuiltInZoomControls(true);
+        webSettings.setSupportZoom(true);
 
         if(Build.VERSION.SDK_INT>=16) {
             webSettings.setAllowFileAccess(true);
@@ -130,7 +138,7 @@ public class SignUpActivity extends AppCompatActivity {
             startActivityForResult(chooserIntent, INPUT_FILE_REQUEST_CODE);
         }}
         );
-        webView.loadUrl("http://192.168.43.29/DeliveryService/SignUp.php");
+        webView.loadUrl(GetIP()+"/DeliveryService/SignUp.php");
     }
 
     private File createImageFile() throws IOException {
