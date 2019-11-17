@@ -11,6 +11,7 @@ import android.widget.RelativeLayout;
 import com.mtsealove.github.food_delivery_manager.MainActivity;
 import com.mtsealove.github.food_delivery_manager.OrderActivity;
 import com.mtsealove.github.food_delivery_manager.R;
+import com.mtsealove.github.food_delivery_manager.ReviewActivity;
 
 public class TitleView extends RelativeLayout {
     Context context;
@@ -43,7 +44,7 @@ public class TitleView extends RelativeLayout {
         Log.d(tag, String.valueOf(R.layout.view_title));
 
         View layout = inflater.inflate(R.layout.view_title, TitleView.this, false);
-        logoIv=layout.findViewById(R.id.logoIv);
+        logoIv = layout.findViewById(R.id.logoIv);
         logoIv.setOnLongClickListener(new OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
@@ -67,6 +68,9 @@ public class TitleView extends RelativeLayout {
                 break;
             case "OrderActivity":
                 OrderActivity.OpenDrawer();
+                break;
+            case "ReviewActivity":
+                ReviewActivity.OpenDrawer();
                 break;
         }
     }

@@ -16,11 +16,21 @@
                 android:layout_height="wrap_content"/>
 
         <ScrollView android:layout_width="match_parent" android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/trans_back"
                     android:scrollbars="none"
-                    android:layout_marginHorizontal="20dp">
+                    android:layout_marginHorizontal="15dp">
             <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                          android:padding="10dp"
                           android:orientation="vertical"
                           android:id="@+id/contentLayout">
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                          android:text="주문"
+                          android:textStyle="bold"
+                          android:textSize="24sp"
+                          android:textColor="@color/black"/>
 
             </LinearLayout>
         </ScrollView>

@@ -24,4 +24,7 @@ public interface RetrofitService {
     @FormUrlEncoded
     @POST("/DeliveryService/Android/Manager/Post/UpdateStatus.php")
     Call<Result> UpdateStatus(@Field("ManagerID") String ManagerID, @Field("OrderTime") String orderTime, @Field("Status") int status);
+
+    @GET("/DeliveryService/Android/Manager/Get/Review.php")
+    Call<List<Review>> GetReview(@Query("ManagerID") String managerID);
 }

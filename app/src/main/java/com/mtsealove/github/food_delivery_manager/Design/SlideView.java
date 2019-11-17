@@ -11,11 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.*;
 import androidx.core.view.WindowInsetsCompat;
+import com.mtsealove.github.food_delivery_manager.*;
 import com.mtsealove.github.food_delivery_manager.Entity.Account;
-import com.mtsealove.github.food_delivery_manager.LoginActivity;
-import com.mtsealove.github.food_delivery_manager.MainActivity;
-import com.mtsealove.github.food_delivery_manager.OrderActivity;
-import com.mtsealove.github.food_delivery_manager.R;
 
 import java.util.ArrayList;
 
@@ -70,6 +67,7 @@ public class SlideView extends LinearLayout {
     private void SetListView() {
         ArrayList<String> menus = new ArrayList<>();
         menus.add("주문 확인");
+        menus.add("리뷰");
 
         ArrayAdapter adapter = new ArrayAdapter(context, R.layout.support_simple_spinner_dropdown_item, menus);
         menuLv.setAdapter(adapter);
@@ -78,22 +76,40 @@ public class SlideView extends LinearLayout {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 switch (position) {
                     case 0:
-                        Intent intent = new Intent(context, OrderActivity.class);
-                        intent.putExtra("account", account);
-                        context.startActivity(intent);
-                        closeDrawer();
+                        moveOrder();
+                        break;
+                    case 1:
+                        moveReview();
                         break;
                 }
             }
         });
     }
 
+    //주문 확인으로 이동
+    private void moveOrder() {
+        Intent intent = new Intent(context, OrderActivity.class);
+        intent.putExtra("account", account);
+        context.startActivity(intent);
+        closeDrawer();
+    }
+
+    //리뷰 확인으로 이동
+    private void moveReview() {
+        Intent intent=new Intent(context, ReviewActivity.class);
+        intent.putExtra("account", account);
+        context.startActivity(intent);
+        closeDrawer();
+    }
+
+    //계정 설정
     public void setAccount(Account account) {
         nameTv.setText(account.getUserName() + "님");
         BnameTv.setText(account.getBusinessName());
         this.account = account;
     }
 
+    //로그아웃
     private void Logout() {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setTitle("로그아웃")
@@ -121,11 +137,16 @@ public class SlideView extends LinearLayout {
     }
 
     private void closeDrawer() {
-        try{
-            MainActivity.CloseDrawer();
-            OrderActivity.CloseDrawer();
-        } catch (Exception e){
-
+        switch (context.getClass().getSimpleName()) {
+            case "MainActivity":
+                MainActivity.CloseDrawer();
+                break;
+            case "OrderActivity":
+                OrderActivity.CloseDrawer();
+                break;
+            case "ReviewActivity":
+                ReviewActivity.CloseDrawer();
+                break;
         }
     }
 }
